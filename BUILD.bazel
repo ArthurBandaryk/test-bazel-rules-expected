@@ -1,6 +1,5 @@
 cc_binary(
     name = "main",
     deps = ["@com_github_expected//:expected"],
-    includes = ["include"],
     srcs = ["main.cc"],
 )
