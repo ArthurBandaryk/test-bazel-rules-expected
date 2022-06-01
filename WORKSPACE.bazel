@@ -1,0 +1,16 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+maybe(
+    git_repository,
+    name = "com_github_3rdparty_expected",
+    remote = "https://github.com/ArthurBandaryk/bazel-rules-expected",
+    commit = "16e318943f4cd6453307e86a785d61d8f52505e1",
+    shallow_since = "1654114200 +0300",
+)
+
+load("@com_github_3rdparty_expected//bazel:repos.bzl", expected_repos = "repos")
+expected_repos()
+
+load("@com_github_3rdparty_expected//bazel:deps.bzl", expected_deps = "deps")
+expected_deps()
